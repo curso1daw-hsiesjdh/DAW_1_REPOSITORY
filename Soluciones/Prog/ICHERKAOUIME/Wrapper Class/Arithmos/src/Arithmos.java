@@ -8,11 +8,11 @@ public class Arithmos{
     static Integer aux= 0;
 
     public static String showArray(){
-        String array="";
+        StringBuilder array= new StringBuilder();
         for (i =0; i<v.length; i++){
-            array = array +" " + v[i];
+            array.append(v[i]).append(" ");
         }
-        return array;
+        return array.toString();
     }
 
     public static void random() {
@@ -20,7 +20,6 @@ public class Arithmos{
             v[i] = (int)(Math.random() * v.length);
         }
     }
-
 
     public static void bubbleAlgorithm(){
         for(i=0; i<v.length-1; i++){
@@ -46,12 +45,12 @@ public class Arithmos{
         while(bot<=top){
             mid=(bot+top)/2;
             if(v[mid].equals(a)){
-                System.out.println(" "+a+ " is in the " + mid + ordinal(mid) + " position of the array");
+                System.out.println(a+ " is in the " + mid + ordinal(mid) + " position of the array");
                 break;
             }
             if(a<v[mid]){ top=mid-1; }
             if(a>v[mid]){ bot=mid+1; }
-            if(bot.equals(top)&& !a.equals(mid)){ System.out.println(" Number doesn't exist in the array"); }
+            if(bot.equals(top)&& !a.equals(mid)){ System.out.println("Number doesn't exist in the array"); }
         }
     }
 
@@ -71,7 +70,6 @@ public class Arithmos{
         }
         return position;
     }
-
 
     public static void main(String[] args) {
         try{
