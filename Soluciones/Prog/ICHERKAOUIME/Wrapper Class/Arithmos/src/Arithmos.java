@@ -39,21 +39,21 @@ public class Arithmos{
         if(a<0){
             throw new SingularityException("Number can't be negative");
         }
-        Integer mid;
         Integer top=v.length-1;
         Integer bot=0;
+        Integer mid=(bot+top)/2;
         while(bot<=top){
-            mid=(bot+top)/2;
             if(v[mid].equals(a)){
-                System.out.println(a+ " is in the " + mid + ordinal(mid) + " position of the array");
+                System.out.println(a+ " is in the " + (mid+1) + ordinal(mid+1) + " position of the array");
                 break;
             }
             if(a<v[mid]){ top=mid-1; }
             if(a>v[mid]){ bot=mid+1; }
-            if(bot.equals(top)&& !a.equals(mid)){ System.out.println("Number doesn't exist in the array"); }
+            mid=(bot+top)/2;
+            if(bot.equals(top) && !v[mid].equals(a)){ System.out.println("Number doesn't exist in the array"); }
         }
     }
-
+ 
     public static String ordinal(Integer a){
         String position="";
         if(a%10 == 1 && a != 11){
