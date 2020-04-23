@@ -59,7 +59,6 @@ ALTER TABLE Empleados
 ADD CONSTRAINT fk_empleados_oficnas FOREIGN KEY (oficina) REFERENCES oficinas(cod_oficina);
 
 -- Tabla Pedidos
-
 CREATE TABLE IF NOT EXISTS Pedidos(
     cod_pedido VARCHAR(10),
     fecha_pedido DATE NOT NULL,
