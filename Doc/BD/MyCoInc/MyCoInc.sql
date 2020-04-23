@@ -59,6 +59,7 @@ ALTER TABLE Empleados
 ADD CONSTRAINT fk_empleados_oficnas FOREIGN KEY (oficina) REFERENCES oficinas(cod_oficina);
 
 -- Tabla Pedidos
+
 CREATE TABLE IF NOT EXISTS Pedidos(
     cod_pedido VARCHAR(10),
     fecha_pedido DATE NOT NULL,
@@ -66,7 +67,9 @@ CREATE TABLE IF NOT EXISTS Pedidos(
     fecha_entrega DATE,
     estado ENUM ('ESPERA', 'ENVIADO', 'DEVUELTO', 'TERMINADO') DEFAULT 'ESPERA',
     descripcion TEXT,
-    PRIMARY KEY (cod_pedido)
+    cod_empleado INTEGER NOT NULL,
+    PRIMARY KEY (cod_pedido),
+    FOREIGN KEY (cod_empleado) REFERENCES Empleados(cod_empleado)
 );
 
 -- Tabla Pagos
