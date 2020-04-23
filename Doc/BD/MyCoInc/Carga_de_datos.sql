@@ -36,7 +36,7 @@ INSERT INTO Oficinas VALUES
 -- Carga inicial de la tabla Empleados
 INSERT INTO Empleados (DNI, Nombre, email, tlfno, extension, oficina) VALUES ('59840570K', 'George Roy Hill', 'georgeroyhill@Metrowoldwynmayer.com', 555202020, 'EXT_01', 'OF_01');
 INSERT INTO Empleados (DNI, Nombre, email, tlfno, extension, oficina, informa_a) 
-    SELECT '43207030N', 'William Wyler', 'williamwyler@warnerbro.com', 555303030, 'EXT_02', 'OF_02', cod_empleado FROM Empleados WHERE DNI='59840570K';
+    SELECT '43207030N', 'William Wyler', 'williamwyler@warnerbro.com', 555303030, 'EXT_02', 'OF_02', cod_empleado FROM Empleados WHERE DNI='59840570K';   
 INSERT INTO Empleados (DNI, Nombre, email, tlfno, extension, oficina, departamento, informa_a) 
     SELECT '72850874F', 'David Lean', 'davidlean@warnerbro.com', 555505050, 'EXT_01', 'OF_01', 'logistic', cod_empleado FROM Empleados WHERE DNI='59840570K';  
 INSERT INTO Empleados (DNI, Nombre, email, tlfno, extension, informa_a) 
@@ -73,22 +73,22 @@ INSERT INTO Productos (nombre_producto, descripcion, cantidad, precio_compra_uni
         ('p20', 'Producto p20', 20, 20.0);
      
 -- Carga inicial de la tabla Pedidos        
-INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, fecha_entrega, estado) VALUES ('P_00001', '2020-01-01', '2020-01-02', '2020-01-09', 4);
-INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, estado) VALUES ('P_00002', '2020-01-01', '2020-01-02', 2);
-INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, estado) VALUES ('P_00003', '2020-01-02', '2020-01-03', 2);
-INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, fecha_entrega, estado) VALUES ('P_00004', '2020-01-02', '2020-01-03', '2020-01-10', 3);
-INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, fecha_entrega, estado) VALUES ('P_00005', '2020-01-04', '2020-01-05', '2020-01-15', 4);
-INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, fecha_entrega, estado) VALUES ('P_00006', '2020-01-04', '2020-01-05', '2020-01-15', 4);
-INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, fecha_entrega, estado) VALUES ('P_00007', '2020-01-04', '2020-01-05', '2020-01-15', 4);
-INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, fecha_entrega, estado) VALUES ('P_00008', '2020-01-05', '2020-01-06', '2020-01-16', 3);
-INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, estado) VALUES ('P_00009', '2020-01-06', '2020-01-07', 2);
-INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, estado) VALUES ('P_00010', '2020-01-06', '2020-01-07', 2);
-INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, estado) VALUES ('P_00011', '2020-01-07', '2020-01-08', 2);
-INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, estado) VALUES ('P_00012', '2020-01-07', '2020-01-08', 2);
-INSERT INTO Pedidos (cod_pedido, fecha_pedido, estado) VALUES ('P_00013', '2020-01-08', 1);
-INSERT INTO Pedidos (cod_pedido, fecha_pedido, estado) VALUES ('P_00014', '2020-01-08', 1);
-INSERT INTO Pedidos (cod_pedido, fecha_pedido, estado) VALUES ('P_00015', '2020-01-08', 1);
-INSERT INTO Pedidos (cod_pedido, fecha_pedido, estado) VALUES ('P_00016', '2020-01-09', 1);
+INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, fecha_entrega, estado, cod_empleado) VALUES ('P_00001', '2020-01-01', '2020-01-02', '2020-01-09', 4, 2);
+INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, estado, cod_empleado) VALUES ('P_00002', '2020-01-01', '2020-01-02', 2, 3);
+INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, estado, cod_empleado) VALUES ('P_00003', '2020-01-02', '2020-01-03', 2, 4);
+INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, fecha_entrega, estado, cod_empleado) VALUES ('P_00004', '2020-01-02', '2020-01-03', '2020-01-10', 3, 5);
+INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, fecha_entrega, estado, cod_empleado) VALUES ('P_00005', '2020-01-04', '2020-01-05', '2020-01-15', 4, 6);
+INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, fecha_entrega, estado, cod_empleado) VALUES ('P_00006', '2020-01-04', '2020-01-05', '2020-01-15', 4, 7);
+INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, fecha_entrega, estado, cod_empleado) VALUES ('P_00007', '2020-01-04', '2020-01-05', '2020-01-15', 4, 2);
+INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, fecha_entrega, estado, cod_empleado) VALUES ('P_00008', '2020-01-05', '2020-01-06', '2020-01-16', 3, 3);
+INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, estado, cod_empleado) VALUES ('P_00009', '2020-01-06', '2020-01-07', 2, 4);
+INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, estado, cod_empleado) VALUES ('P_00010', '2020-01-06', '2020-01-07', 2, 5);
+INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, estado, cod_empleado) VALUES ('P_00011', '2020-01-07', '2020-01-08', 2, 6);
+INSERT INTO Pedidos (cod_pedido, fecha_pedido, fecha_envio, estado, cod_empleado) VALUES ('P_00012', '2020-01-07', '2020-01-08', 2, 7);
+INSERT INTO Pedidos (cod_pedido, fecha_pedido, estado, cod_empleado) VALUES ('P_00013', '2020-01-08', 1, 3);
+INSERT INTO Pedidos (cod_pedido, fecha_pedido, estado, cod_empleado) VALUES ('P_00014', '2020-01-08', 1, 2);
+INSERT INTO Pedidos (cod_pedido, fecha_pedido, estado, cod_empleado) VALUES ('P_00015', '2020-01-08', 1, 2);
+INSERT INTO Pedidos (cod_pedido, fecha_pedido, estado, cod_empleado) VALUES ('P_00016', '2020-01-09', 1, 2);
 
 -- Carga inicial de la tabla Pagos
 INSERT INTO Pagos (cod_cliente, cantidad, num_plazos, cod_pedido) VALUES (1, 100.0, 0, 'P_00001');  -- Pago maestro 1 sin pagos parciales
@@ -147,4 +147,5 @@ INSERT INTO Detalles_pedidos (cod_pedido, cod_producto) VALUES ('P_00012', 2);
 
 
 -- FIN
+
 

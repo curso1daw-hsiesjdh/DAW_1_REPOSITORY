@@ -66,7 +66,9 @@ CREATE TABLE IF NOT EXISTS Pedidos(
     fecha_entrega DATE,
     estado ENUM ('ESPERA', 'ENVIADO', 'DEVUELTO', 'TERMINADO') DEFAULT 'ESPERA',
     descripcion TEXT,
-    PRIMARY KEY (cod_pedido)
+    cod_empleado INTEGER NOT NULL,
+    PRIMARY KEY (cod_pedido),
+    FOREIGN KEY (cod_empleado) REFERENCES Empleados(cod_empleado)
 );
 
 -- Tabla Pagos
