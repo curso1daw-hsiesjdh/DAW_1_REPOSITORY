@@ -48,6 +48,13 @@ Insert into PEDIDOS (cod_pedido,cod_cliente,descripcion,fecha_realizacion,fecha_
 Insert into PEDIDOS (cod_pedido,cod_cliente,descripcion,fecha_realizacion,fecha_entrega) values ('p8','c2','Pedido p8 del cliente c2','2020-04-01','2020-04-11');
 Insert into PEDIDOS (cod_pedido,cod_cliente,descripcion,fecha_realizacion,fecha_entrega) values ('p9','c6','Pedido p9 del cliente c6','2020-04-15','2020-04-25');
 
+SELECT* FROM Clientes;
+
+SELECT* FROM Pedidos;
+
+SELECT*
+FROM clientes AS c
+LEFT JOIN pedidos AS p ON (c.cod_clientes = p.cod_clientes);
 
 
 
