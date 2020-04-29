@@ -250,10 +250,11 @@ public class TerceraEv_API_PHERRANZCA {
 			vInput[i] = vInput[i].concat(vSplit[0]);
 			
 			//A partir de aquí, como ya hemos concatenado el split de la forma que hemos querido,
-			//le volvemos a poner los guiones que separan cada parte del String
+			//le volvemos a poner los guiones que separan cada parte del String en las posiciones 4 y 7,
+			//para ello, usamos la función "addChar()"
 			
-			vInput[i] = vInput[i].substring(0, 4) + "-" + vInput[i].substring(4);
-			vInput[i] = vInput[i].substring(0, 7) + "-" + vInput[i].substring(7);
+			vInput[i] = addChar(vInput[i], '-', 4);
+			vInput[i] = addChar(vInput[i], '-', 7);
 		}
 		
 		return vInput;
@@ -274,8 +275,8 @@ public class TerceraEv_API_PHERRANZCA {
 		return vInput;
 	}
 	
-	public static String addChar(String str, String ch, int position) {
-	    return str.substring(0, position) + ch + str.substring(position + 1);
+	public static String addChar(String str, char ch, int position) {
+	    return str.substring(0, position) + ch + str.substring(position);
 	}
 	
 	public static void main(String[] args) throws ParseException {
