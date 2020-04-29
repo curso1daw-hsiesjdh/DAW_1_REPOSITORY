@@ -136,8 +136,6 @@ public class TerceraEv_API_PHERRANZCA {
 		Date date = sdf.parse(dateInString);
 		System.out.println(date);
 		
-		
-		
 		//3.	Modifica el código del ejemplo 3 para mostrar sólo la fecha. Ahora muestra sólo la hora.
 		
 		System.out.println("\nEJERCICIO 4.3.");
