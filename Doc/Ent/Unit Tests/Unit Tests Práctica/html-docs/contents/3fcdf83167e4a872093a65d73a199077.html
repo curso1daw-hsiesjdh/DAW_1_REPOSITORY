@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>segundoOperando</title>
+    <title>Calculadora</title>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../assets/css/bootstrap.css">
 <link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
@@ -18,14 +18,14 @@
 
       <!-- Name Title -->
 
-      <h1>segundoOperando</h1>
+      <h1>Calculadora</h1>
 
       <!-- Type and Stereotype -->
 
       <section style="margin-top: .5em;">
         <span class="alert alert-info">
-          <span class="node-icon staruml-icon icon-UMLParameter"></span>
-          UMLParameter
+          <span class="node-icon staruml-icon icon-UMLClass"></span>
+          UMLClass
         </span>
         
       </section>
@@ -43,13 +43,7 @@
           <span class="label label-info"><a href='594af663de577680f35b13183109d675.html'><span class='node-icon staruml-icon icon-UMLModel'></span>Model</a></span>
         
           <span>::</span>
-          <span class="label label-info"><a href='3b5baba6ce135143aa8a77204d996c91.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Parseador</a></span>
-        
-          <span>::</span>
-          <span class="label label-info"><a href='e7ef440ca05f719d8ae389c111eb3f23.html'><span class='node-icon staruml-icon icon-UMLOperation'></span>obtenerSegundoOperador</a></span>
-        
-          <span>::</span>
-          <span class="label label-info"><a href='0ab241c7bc9dbce1faeb8a4bae8c53c1.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>segundoOperando</a></span>
+          <span class="label label-info"><a href='3fcdf83167e4a872093a65d73a199077.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Calculadora</a></span>
         
       </section>
 
@@ -64,7 +58,7 @@
         <h3>Description</h3>
         <div>
           
-            <p>Entero que representa el segundo operando de la operación extraído de la expresión matemática</p>
+            <span class="label label-info">none</span>
           
         </div>
       </section>
@@ -83,6 +77,26 @@
       
 
       <!-- Classifier -->
+
+      
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        
 
       
 
@@ -120,6 +134,48 @@
 
       <!-- Operations -->
 
+      
+      <section>
+        <h3>Operations</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Visibility</th>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="9be68e42f3a8d7a8013b46a8ba5b54ab.html">sumar(sumando1: Integer, sumando2: Integer): Integer</a></td>
+            <td><p>Lleva a cabo la operación  sumando1 + sumando2 y devuelve el resultado</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="89fa87433becb9e1727c69165d674972.html">multiplicar(multiplicando1: Integer, multiplicando2): Integer</a></td>
+            <td><p>Lleva a cabo la operación multiplicando1 * multiplicando2 y devuelve el resultado</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="d1869217e0cd87b8bfb62aa374b5e514.html">restar(minuendo: Integer, sustraendo: Integer): Integer</a></td>
+            <td><p>Lleva a cabo la operación minuendo - sustraendo y devuelve el resultado</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="eabce65eb4a0b5578fba1d5eb85a7032.html">dividir(dividendo: Integer, divisor: Integer): Double</a></td>
+            <td><p>Lleva a cabo la operación dividendo / divisor y devuelve el resultado. Si el operador divisor es igual a cero se debe lanzar la excepción BadOperatorException con el mensaje &quot;División por 0. No se puede realizar la operación de división.&quot;</p></td>
+          </tr>
+          
+          <tr>
+            <td>public</td>
+            <td><a href="d0b3d5c9c0b21e95360255a5c0c3f5a5.html">computarExpresion(expresion: String): Double</a></td>
+            <td><p>Recibe por parámetro una cadena de caracteres del tipo &quot;4 / -3&quot; y en función del operador extraido de la expresión anterior se debe invocar al método sumar, restar, multiplicar o dividir con los parámetros extraidos de la expresion de entrada. Para este ejemplo, se debe invocar la función dividir con los parámetros 4 y -3, es decir: this.dividir(4, -3);</p></td>
+          </tr>
+          
+        </table>
+      </section>
       
 
       <!-- Receptions -->
@@ -218,7 +274,7 @@
     
     <tr>
         <td>name</td>
-        <td>segundoOperando</td>
+        <td>Calculadora</td>
     </tr>
     
     
@@ -251,8 +307,25 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
-        <td>isStatic</td>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isFinalSpecialization</td>
         <td><span class='label label-info'>false</span></td>
     </tr>
     
@@ -270,62 +343,8 @@
     
     
     <tr>
-        <td>type</td>
-        <td>Integer</td>
-    </tr>
-    
-    
-    
-    
-    
-    <tr>
-        <td>multiplicity</td>
-        <td></td>
-    </tr>
-    
-    
-    
-    
-    
-    <tr>
-        <td>isReadOnly</td>
+        <td>isActive</td>
         <td><span class='label label-info'>false</span></td>
-    </tr>
-    
-    
-    
-    
-    
-    <tr>
-        <td>isOrdered</td>
-        <td><span class='label label-info'>false</span></td>
-    </tr>
-    
-    
-    
-    
-    
-    <tr>
-        <td>isUnique</td>
-        <td><span class='label label-info'>false</span></td>
-    </tr>
-    
-    
-    
-    
-    
-    <tr>
-        <td>defaultValue</td>
-        <td></td>
-    </tr>
-    
-    
-    
-    
-    
-    <tr>
-        <td>direction</td>
-        <td>return</td>
     </tr>
     
     
@@ -358,12 +377,34 @@
 
       
       
+<section class="element-list">
+    <h3>Relationships</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='75fc86c87fd5ca910d06f3b566aab0a6.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>«use»(BadOperatorException—Calculadora)</a></li>
+        
+        <li><a href='ec20d987c0d23b8fdac41c4fd8442e6c.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>«tiene»(Calculadora—Parseador)</a></li>
+        
+    </ul>
+</section>
+
 
 
       <!-- Owned Elements -->
 
       
       
+<section class="element-list">
+    <h3>Owned Elements</h3>
+    <ul class="nav nav-list">
+        
+        <li><a href='75fc86c87fd5ca910d06f3b566aab0a6.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>«use»(BadOperatorException—Calculadora)</a></li>
+        
+        <li><a href='ec20d987c0d23b8fdac41c4fd8442e6c.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>«tiene»(Calculadora—Parseador)</a></li>
+        
+    </ul>
+</section>
+
 
 
     </div>

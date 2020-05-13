@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Parseador</title>
+    <title>obtenerOperador</title>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic|Source+Code+Pro:300,400,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../assets/css/bootstrap.css">
 <link rel="stylesheet" href="../assets/css/jquery.bonsai.css">
@@ -18,14 +18,14 @@
 
       <!-- Name Title -->
 
-      <h1>Parseador</h1>
+      <h1>obtenerOperador</h1>
 
       <!-- Type and Stereotype -->
 
       <section style="margin-top: .5em;">
         <span class="alert alert-info">
-          <span class="node-icon staruml-icon icon-UMLClass"></span>
-          UMLClass
+          <span class="node-icon staruml-icon icon-UMLOperation"></span>
+          UMLOperation
         </span>
         
       </section>
@@ -45,6 +45,9 @@
           <span>::</span>
           <span class="label label-info"><a href='3b5baba6ce135143aa8a77204d996c91.html'><span class='node-icon staruml-icon icon-UMLClass'></span>Parseador</a></span>
         
+          <span>::</span>
+          <span class="label label-info"><a href='1374a38f0653c20366d5d4fb1ca22467.html'><span class='node-icon staruml-icon icon-UMLOperation'></span>obtenerOperador</a></span>
+        
       </section>
 
       <!-- Diagram -->
@@ -58,9 +61,9 @@
         <h3>Description</h3>
         <div>
           
-            <p>Clase de utilidad empleada para descomponer una expresión matemática de la forma operando1 operador operando2 en cada una de sus partes.</p>
+            <p>Método para extraer el operador de la expresión matemática.</p>
 
-<p>Supondremos que la cadena de caracteres que representa a la expresión matemática está bien formada.</p>
+<p>Si la expresión de entrada es &quot;4 + 7&quot;, este método debe devolver cadena de caracteres &quot;+&quot;.</p>
           
         </div>
       </section>
@@ -79,26 +82,6 @@
       
 
       <!-- Classifier -->
-
-      
-        
-        
-
-
-        
-        
-
-
-        
-        
-
-
-        
-        
-
-
-        
-        
 
       
 
@@ -137,36 +120,6 @@
       <!-- Operations -->
 
       
-      <section>
-        <h3>Operations</h3>
-        <table class="table table-striped table-bordered">
-          <tr>
-            <th>Visibility</th>
-            <th>Name</th>
-            <th>Description</th>
-          </tr>
-          
-          <tr>
-            <td>public</td>
-            <td><a href="f5f6ea0698d781561d55af0795abe7dc.html">obtenerPrimerOperando(expresion: String): Integer</a></td>
-            <td><p>Método para la optención del primer operando de la expresión matemática.</p></td>
-          </tr>
-          
-          <tr>
-            <td>public</td>
-            <td><a href="e7ef440ca05f719d8ae389c111eb3f23.html">obtenerSegundoOperador(expresion: String): Integer</a></td>
-            <td><p>Método para la optención del segundo operador de la expresión mátemática.</p></td>
-          </tr>
-          
-          <tr>
-            <td>public</td>
-            <td><a href="1374a38f0653c20366d5d4fb1ca22467.html">obtenerOperador(expresion: String): String</a></td>
-            <td><p>Método para extraer el operador de la expresión matemática</p></td>
-          </tr>
-          
-        </table>
-      </section>
-      
 
       <!-- Receptions -->
 
@@ -178,6 +131,33 @@
 
       <!-- Parameters -->
 
+      
+      <section>
+        <h3>Parameters</h3>
+        <table class="table table-striped table-bordered">
+          <tr>
+            <th>Direction</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          
+          <tr>
+            <td>in</td>
+            <td><a href="ceec012781c034f80c35fa1ebe6084c4.html">expresion</a></td>
+            <td>String</td>
+            <td><p>Cadena de caraceres que representa la expresión matemática</p></td>
+          </tr>
+          
+          <tr>
+            <td>return</td>
+            <td><a href="e4d2eb8eaba0ca1ffa30d852c97ad5a1.html">operador</a></td>
+            <td>String</td>
+            <td><p>Operador (+, -, *, /) estraído de la expresión matemática</p></td>
+          </tr>
+          
+        </table>
+      </section>
       
 
       <!-- Diagrams -->
@@ -264,7 +244,7 @@
     
     <tr>
         <td>name</td>
-        <td>Parseador</td>
+        <td>obtenerOperador</td>
     </tr>
     
     
@@ -297,25 +277,8 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
     <tr>
-        <td>isAbstract</td>
-        <td><span class='label label-info'>false</span></td>
-    </tr>
-    
-    
-    
-    
-    
-    <tr>
-        <td>isFinalSpecialization</td>
+        <td>isStatic</td>
         <td><span class='label label-info'>false</span></td>
     </tr>
     
@@ -333,9 +296,70 @@
     
     
     <tr>
-        <td>isActive</td>
+        <td>parameters</td>
+        <td>
+            
+            
+            <a href='ceec012781c034f80c35fa1ebe6084c4.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>expresion</a>
+            
+            <span>, </span>
+            <a href='e4d2eb8eaba0ca1ffa30d852c97ad5a1.html'><span class='node-icon staruml-icon icon-UMLParameter'></span>operador</a>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>raisedExceptions</td>
+        <td>
+            
+        </td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>concurrency</td>
+        <td>sequential</td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isQuery</td>
         <td><span class='label label-info'>false</span></td>
     </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>isAbstract</td>
+        <td><span class='label label-info'>false</span></td>
+    </tr>
+    
+    
+    
+    
+    
+    <tr>
+        <td>specification</td>
+        <td></td>
+    </tr>
+    
+    
+    
+    
+    
+    
     
     
     
@@ -367,15 +391,6 @@
 
       
       
-<section class="element-list">
-    <h3>Relationships</h3>
-    <ul class="nav nav-list">
-        
-        <li><a href='ec20d987c0d23b8fdac41c4fd8442e6c.html'><span class='node-icon staruml-icon icon-UMLAssociation'></span>«tiene»(Calculadora—Parseador)</a></li>
-        
-    </ul>
-</section>
-
 
 
       <!-- Owned Elements -->
