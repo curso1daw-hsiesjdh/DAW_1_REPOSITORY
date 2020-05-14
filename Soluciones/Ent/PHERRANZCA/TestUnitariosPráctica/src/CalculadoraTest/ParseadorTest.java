@@ -1,57 +1,108 @@
 package CalculadoraTest;
 
-import Calculadora.Calculadora;
-import Calculadora.Parseador;
+import Calculadora.*;
 import Calculadora.Exceptions.BadOperatorException;
 
-import static org.mockito.Mockito.when;
+import org.junit.Assert;
 import org.junit.jupiter.api.*;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-
 
 class ParseadorTest {
 	
-	@InjectMocks
-	private static Calculadora calculadora;
-	
-	@Mock
 	private static Parseador parseador;
-	
-	@BeforeEach
-	public void inicilizaMocks() {
-		MockitoAnnotations.initMocks(this);
-	}
+	private static String  operacion;
 	
 	@BeforeAll
 	public static void prepareTestCase() {
-		calculadora = new Calculadora();
-		parseador = new Parseador();
+		parseador = new Parseador();		
 	}
 	
-	public void obtenerResultadoTest() throws BadOperatorException {
+	@Test
+	public void ObtenerPrimerOperandoTest1() throws BadOperatorException {
 		
-		String operacion = "2-14"; // El resultado esperado es -12
-		
-		// Simulación de la invocación de los métodos del objeto mockeado.
-		when(parseador.ObtenerPrimerOperando(operacion)).thenReturn(2);
-		when(parseador.ObtenerSegundoOperando(operacion)).thenReturn(14);
-		when(parseador.ObtenerOperador(operacion)).thenReturn("-");
+		//Contexto
+		operacion = "28 + 14";
 
-		// Test de ComputarExpresion()
-		double resultado = calculadora.ComputarExpresion(operacion);
-		Assertions.assertEquals(14, resultado);
-		
-		// Test de ObtenerPrimerOperando()
-		int operando1 = parseador.ObtenerPrimerOperando(operacion);
-		Assertions.assertEquals(2, operando1);
-		
-		// Test de ObtenerPrimerOperando()
-		int operando2 = parseador.ObtenerSegundoOperando(operacion);
-		Assertions.assertEquals(14, operando2);
+		//Método a testear y comprobación
+		int resultado = parseador.ObtenerPrimerOperando(operacion);
+	
+		Assert.assertEquals(28, resultado);
 		
 	}
+	
+	@Test
+	public void ObtenerPrimerOperandoTest2() throws BadOperatorException {
+		
+		//Contexto
+		operacion = "-28 - 14";
+		
+		// Ejecuci�n del m�todo a testear
+		int resultado = parseador.ObtenerPrimerOperando(operacion);
+		
+		// Comprobaci�n
+		Assert.assertEquals(-28, resultado);
+		
+	}
+	
+	@Test
+	public void ObtenerPrimerOperandoTest3() {
+		
+		//Contexto
+		operacion = "+---+98 - (-15)";
 
+		//Método a testear y comprobación
+		try {
+			parseador.ObtenerPrimerOperando(operacion);
+			
+			// Comprobaci�n
+			Assert.fail("Debería lanzarse la excepción: BadOperatorException");
+		} catch (BadOperatorException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	@Test
+	public void ObtenerSegundoOperandoTest1() throws BadOperatorException {
+		//Contexto
+		operacion = "28 + 59";
+		
+		int resultado = parseador.ObtenerSegundoOperando(operacion);
+		
+		Assert.assertEquals(59, resultado);	
+	
+	}
 
+	@Test
+	public void ObtenerSegundoOperandoTest2() throws BadOperatorException {
+		//Contexto
+		operacion = "-28 - (-2)";
+		
+		//Método a testear y comprobación
+		int resultado = parseador.ObtenerSegundoOperando(operacion);
+		
+		// Comprobaci�n
+		Assert.assertEquals(-2, resultado);	
+	}
+	
+	@Test
+	public void obtenerOperadorTest1() throws BadOperatorException {
+		//Contexto
+		operacion = "-3 + (-45)";
+		
+		//Método a testear y comprobación
+		String resultado = parseador.ObtenerOperador(operacion);
+
+		Assert.assertEquals("+", resultado);
+	}
+
+	@Test
+	public void obtenerOperadorTest2() throws BadOperatorException {
+		//Contexto
+		operacion = "-15 - 97";
+
+		//Método a testear y comprobación						
+		String resultado = parseador.ObtenerOperador(operacion);
+
+		Assert.assertEquals("-", resultado);
+	}
 }

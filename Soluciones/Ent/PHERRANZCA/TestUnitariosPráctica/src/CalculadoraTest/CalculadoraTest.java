@@ -19,13 +19,9 @@ class CalculadoraTest {
 	@Mock
 	private Parseador parseador = new Parseador();
 	
-//	@BeforeEach
-//	public void inicilizaMocks() {
-//		MockitoAnnotations.initMocks(this);
-//	}
-//	
 //	@BeforeAll
-//	public void init() throws BadOperatorException {
+//	public void inicilizaMocks() throws BadOperatorException {
+//		MockitoAnnotations.initMocks(this);
 //		
 //		String operacion = "7 + 5";
 //		
@@ -34,6 +30,7 @@ class CalculadoraTest {
 //		when(parseador.ObtenerSegundoOperando(operacion)).thenReturn(5);
 //		when(parseador.ObtenerOperador(operacion)).thenReturn("+");
 //	}
+
 	
 	//MÉTODO SUMAR()
 	@Test
