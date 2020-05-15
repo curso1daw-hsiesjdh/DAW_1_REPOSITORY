@@ -19,6 +19,12 @@ class CalculadoraTest {
 	@Mock
 	private Parseador parseador = new Parseador();
 	
+//	Como se puede observar, no sé muy bien cómo se utiliza Mockito. Sé que parseador es la dependencia, y
+//	calculadora es dependiente de parseador. Por eso sé qué @Mock y @InjectMocks están bien puestos.
+//	Pero no sé más.
+//	
+//	Si descomento estas líneas, no corre el test unitario...
+//	
 //	@BeforeAll
 //	public void inicilizaMocks() throws BadOperatorException {
 //		MockitoAnnotations.initMocks(this);
