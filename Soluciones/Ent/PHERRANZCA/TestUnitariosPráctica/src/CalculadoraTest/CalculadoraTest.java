@@ -10,6 +10,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import com.jdh.daw.ed.exceptions.BadCoefficientException;
+
 
 class CalculadoraTest {
 	
@@ -19,19 +21,17 @@ class CalculadoraTest {
 	@Mock
 	private Parseador parseador = new Parseador();
 	
-//	Como se puede observar, no sé muy bien cómo se utiliza Mockito. Sé que parseador es la dependencia, y
-//	calculadora es dependiente de parseador. Por eso sé qué @Mock y @InjectMocks están bien puestos.
-//	Pero no sé más.
+////SI SE DESCOMENTA ESTO, NO HACE EL TEST. NO SÉ USAR MOCKITO.
 //	
-//	Si descomento estas líneas, no corre el test unitario...
 //	
 //	@BeforeAll
 //	public void inicilizaMocks() throws BadOperatorException {
 //		MockitoAnnotations.initMocks(this);
-//		
+//	}
+//	
+//	public void obtenerResultadoTest() throws BadOperatorException {
 //		String operacion = "7 + 5";
-//		
-//		//Comportamientos predecibles del parseador
+//	
 //		when(parseador.ObtenerPrimerOperando(operacion)).thenReturn(7);
 //		when(parseador.ObtenerSegundoOperando(operacion)).thenReturn(5);
 //		when(parseador.ObtenerOperador(operacion)).thenReturn("+");
@@ -77,7 +77,7 @@ class CalculadoraTest {
 		System.out.println("\nEl resultado de restar \"2 - 3\" = " + calculadora.Sumar(2, 3));
 		//CASO 2
 		Assertions.assertEquals(10, calculadora.Restar(7, -3));
-		System.out.println("El resultado de restar \"7 - (-3)\" = " + calculadora.Sumar(7, -3));
+		System.out.println("El resultado de restar \"7 - -3\" = " + calculadora.Sumar(7, -3));
 		//CASO 3
 		Assertions.assertEquals(-3, calculadora.Restar(-8, -5));
 		System.out.println("El resultado de restar \"-8 - 5\" = " + calculadora.Sumar(-7, 4));
@@ -100,23 +100,23 @@ class CalculadoraTest {
 		System.out.println("El resultado de dividir \"-570 / 2\" = " + calculadora.Dividir(-570, 54));
 	}
 	
-	//MÉTODO COMPUTAREXPRESION()
+	//MÉTODO COMPUTAR EXPRESION()
 	@Test
 	public void ComputarExpresionTest() throws BadOperatorException {
 		//CASO 1
 		Assertions.assertEquals(9, calculadora.ComputarExpresion("7 + 2"));
 		System.out.println("\nEl resultado de la operación \"7 + 2\" = " + calculadora.ComputarExpresion("7 + 2"));
 		//CASO 2
-		Assertions.assertEquals(5, calculadora.ComputarExpresion("7 + (-2)"));
-		System.out.println("El resultado de la operación \"7 + (-2)\" = " + calculadora.ComputarExpresion("7 + (-2)"));
+		Assertions.assertEquals(5, calculadora.ComputarExpresion("7 + -2"));
+		System.out.println("El resultado de la operación \"7 + -2\" = " + calculadora.ComputarExpresion("7 + -2"));
 		//CASO 3
 		Assertions.assertEquals(-17, calculadora.ComputarExpresion("-8 - 9"));
 		System.out.println("El resultado de la operación \"-8 - 9\" = " + calculadora.ComputarExpresion("-8 - 9"));
 		//CASO 4
-		Assertions.assertEquals(405, calculadora.ComputarExpresion("-27 * (-15)"));
-		System.out.println("El resultado de la operación \"-27 + (-15)\" = " + calculadora.ComputarExpresion("-27 * (-15)"));
+		Assertions.assertEquals(405, calculadora.ComputarExpresion("-27 * -15"));
+		System.out.println("El resultado de la operación \"-27 + -15\" = " + calculadora.ComputarExpresion("-27 * -15"));
 		//CASO 5
-		Assertions.assertEquals(-1.52, calculadora.ComputarExpresion("-32/21"), 0.01);
+		Assertions.assertEquals(-1.52, calculadora.ComputarExpresion("-32 / 21"), 0.01);
 		System.out.println("El resultado de la operación \"-32 + 21\" = " + calculadora.ComputarExpresion("-32 / 21"));
 	}
 

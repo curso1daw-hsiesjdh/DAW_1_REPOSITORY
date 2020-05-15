@@ -17,7 +17,7 @@ class ParseadorTest {
 	}
 	
 	@Test
-	public void ObtenerPrimerOperandoTest1() throws BadOperatorException {
+	public void ObtenerPrimerOperandoTest1() {
 		
 		operacion = "28 + 14";
 		int resultado = parseador.ObtenerPrimerOperando(operacion);
@@ -26,7 +26,7 @@ class ParseadorTest {
 	}
 	
 	@Test
-	public void ObtenerPrimerOperandoTest2() throws BadOperatorException {
+	public void ObtenerPrimerOperandoTest2() {
 		
 		operacion = "-28 - 14";
 		int resultado = parseador.ObtenerPrimerOperando(operacion);
@@ -35,28 +35,16 @@ class ParseadorTest {
 	}
 	
 	@Test
-	public void ObtenerPrimerOperandoTest3() throws BadOperatorException {
+	public void ObtenerPrimerOperandoTest3() {
 		
-		operacion = "9 * (-14)";
+		operacion = "9 * -14";
 		int resultado = parseador.ObtenerPrimerOperando(operacion);
 		Assert.assertEquals(9, resultado);
 		
 	}
 	
 	@Test
-	public void ObtenerPrimerOperandoTest4() {
-		
-		operacion = "+---+98 - (-15)";
-		try {
-			parseador.ObtenerPrimerOperando(operacion);
-			Assert.fail("Debería lanzarse la excepción: BadOperatorException");
-		} catch (BadOperatorException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	@Test
-	public void ObtenerSegundoOperandoTest1() throws BadOperatorException {
+	public void ObtenerSegundoOperandoTest1() {
 
 		operacion = "28 + 59";
 		int resultado = parseador.ObtenerSegundoOperando(operacion);
@@ -65,16 +53,16 @@ class ParseadorTest {
 	}
 
 	@Test
-	public void ObtenerSegundoOperandoTest2() throws BadOperatorException {
+	public void ObtenerSegundoOperandoTest2() {
 
-		operacion = "-28 - (-2)";
+		operacion = "-28 - -2";
 		int resultado = parseador.ObtenerSegundoOperando(operacion);
 		Assert.assertEquals(-2, resultado);	
 	
 	}
 	
 	@Test
-	public void ObtenerSegundoOperandoTest3() throws BadOperatorException {
+	public void ObtenerSegundoOperandoTest3() {
 
 		operacion = "99 * 16";
 		int resultado = parseador.ObtenerSegundoOperando(operacion);
@@ -85,7 +73,7 @@ class ParseadorTest {
 	@Test
 	public void obtenerOperadorTest1() throws BadOperatorException {
 	
-		operacion = "-3 + (-45)";
+		operacion = "-3 + -45";
 		String resultado = parseador.ObtenerOperador(operacion);
 		Assert.assertEquals("+", resultado);
 		
@@ -106,5 +94,7 @@ class ParseadorTest {
 		operacion = "-3 / 2";
 		String resultado = parseador.ObtenerOperador(operacion);
 		Assert.assertEquals("/", resultado);
+	
 	}
+
 }

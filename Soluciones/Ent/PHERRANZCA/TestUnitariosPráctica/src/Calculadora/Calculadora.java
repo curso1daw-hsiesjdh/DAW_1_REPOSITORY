@@ -5,15 +5,15 @@ import Calculadora.Exceptions.*;
 public class Calculadora{
 
 	private Parseador parseador = new Parseador();
-	
+
 	public int Sumar(int sumando1, int sumando2) {
 		return sumando1 + sumando2;
 	}
-	
+
 	public int Multiplicar(int multiplicando1, int multiplicando2) {
 		return multiplicando1 * multiplicando2;
 	}
-	
+
 	public int Restar(int minuendo, int sustraendo) {
 		return minuendo - sustraendo;
 	}
